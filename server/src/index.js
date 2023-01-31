@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import express from 'express';
-import initRouter from '../routes';
 import configViewEngine from './configs/viewEngine';
+import initRouter from './routes';
 
 dotenv.config();
 const app = express();
