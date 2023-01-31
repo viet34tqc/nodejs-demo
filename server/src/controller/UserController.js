@@ -26,6 +26,18 @@ class UserController {
 		return res.redirect('/');
 	}
 
+	async createUser(req, res) {
+		const { firstName, lastName, email, address, id } = req.body;
+		await connection
+			.promise()
+			.execute(
+				'insert into users (firstName, lastName, email, address) values (?, ?, ?, ?)',
+				[firstName, lastName, email, address]
+			);
+
+		return res.redirect('/');
+	}
+
 	async deleteUser(req, res) {
 		const { userId } = req.body;
 		await connection
