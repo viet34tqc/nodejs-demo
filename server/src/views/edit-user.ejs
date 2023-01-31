@@ -1,0 +1,27 @@
+<%- include ('header', {title: 'Edit User'}) %>
+
+<div class="update-user-container">
+	<form action="/update/user" method="POST">
+		<div>
+			<label>First name:</label>
+			<input name="firstName" value="<%= userData.firstName %>" />
+		</div>
+		<div>
+			<label>Last name:</label>
+			<input name="lastName" value="<%= userData.lastName %>" />
+		</div>
+		<div>
+			<label>Email:</label>
+			<input name="email" value="<%= userData.email %>" />
+		</div>
+		<div>
+			<label>Address:</label>
+			<input name="address" value="<%= userData.address %>" />
+		</div>
+		<input type="text" value="<%= userData.id %>" hidden name="id" />
+		<div>
+			<button class="btn-save" type="submit">Save</button>
+		</div>
+	</form>
+	<%- include ('footer') %>
+</div>

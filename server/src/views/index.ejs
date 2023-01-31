@@ -1,4 +1,4 @@
-<%- include ('header') %>
+<%- include ('header', {title: 'Home'}) %>
 
 <h2>List users Table</h2>
 
@@ -26,10 +26,10 @@
 						>Detail</a
 					>
 				</form>
-				<form action="/edit-user/<%= userData[i].id %>" method="GET">
+				<form action="/edit/user/<%= userData[i].id %>" method="GET">
 					<button type="submit">Edit</button>
 				</form>
-				<form action="/delete-user" method="POST">
+				<form action="/delete/user" method="POST">
 					<input
 						type="text"
 						hidden
