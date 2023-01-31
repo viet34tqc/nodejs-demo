@@ -18,17 +18,10 @@
 			<td><%= userData[i].firstName %></td>
 			<td><%= userData[i].lastName %></td>
 			<td style="display: flex; gap: 15px">
-				<form>
-					<a
-						class="btn-detail"
-						href="/detail/user/<%= userData[i].id %>"
-						target="_blank"
-						>Detail</a
-					>
-				</form>
-				<form action="/edit/user/<%= userData[i].id %>" method="GET">
-					<button type="submit">Edit</button>
-				</form>
+				<a class="btn-detail" href="/detail/user/<%= userData[i].id %>"
+					>Detail</a
+				>
+				<a class="btn-detail" href="/edit/user/<%= userData[i].id %>">Edit</a>
 				<form action="/delete/user" method="POST">
 					<input
 						type="text"

@@ -9,6 +9,7 @@ const initRouter = app => {
 	router.get('/detail/user/:id', userInstance.getUser);
 	router.get('/edit/user/:id', userInstance.getUser);
 	router.post('/update/user', userInstance.updateUser);
+	router.post('/delete/user', userInstance.deleteUser);
 
 	// The '/' path is like the prefix. If you change '/' to '/abc' then the root route will be localhost/abc
 	// When we build api, we can use this prefix like '/api/v1/'

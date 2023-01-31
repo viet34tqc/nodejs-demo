@@ -15,7 +15,6 @@ class UserController {
 	}
 
 	async updateUser(req, res) {
-		console.log('req.body', req.body);
 		const { firstName, lastName, email, address, id } = req.body;
 		await connection
 			.promise()
@@ -23,6 +22,15 @@ class UserController {
 				'update users set firstName= ?, lastName= ?, email= ?, address= ? where id = ?',
 				[firstName, lastName, email, address, id]
 			);
+
+		return res.redirect('/');
+	}
+
+	async deleteUser(req, res) {
+		const { userId } = req.body;
+		await connection
+			.promise()
+			.execute('delete from users where id = ?', [userId]);
 
 		return res.redirect('/');
 	}
