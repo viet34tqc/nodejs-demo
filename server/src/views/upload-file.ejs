@@ -1,0 +1,34 @@
+<%- include ('header', {title: 'Upload file'}) %>
+
+<div class="upload-file-container">
+	<h1>Handling File Uploads using Express.js and Multer</h1>
+	<form
+		method="POST"
+		action="/upload/single"
+		enctype="multipart/form-data"
+	>
+		<h3>Upload single file:</h3>
+		<div>
+			<span>Upload your profile picture:</span>
+			<input type="file" name="single_file" />
+		</div>
+
+		<button class="btn-save" type="submit">Upload</button>
+	</form>
+
+	<hr />
+
+	<form
+		method="POST"
+		action="/upload/multiple"
+		enctype="multipart/form-data"
+	>
+		<h3>Upload Multiple Files</h3>
+		<div>
+			<span>Select multiple images:</span>
+			<input type="file" name="multiple_file" multiple />
+		</div>
+		<input type="submit" name="btn_upload_multiple_images" value="Upload" />
+	</form>
+</div>
+<%- include ('footer') %>
