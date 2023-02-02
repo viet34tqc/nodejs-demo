@@ -12,6 +12,9 @@ const initRouter = app => {
 	router.post('/create/user', userInstance.createUser);
 	router.post('/delete/user', userInstance.deleteUser);
 
+	router.get('/upload', (req, res) => {
+		res.render('upload-file.ejs')
+	});
 	// The '/' path is like the prefix. If you change '/' to '/abc' then the root route will be localhost/abc
 	// When we build api, we can use this prefix like '/api/v1/'
 	return app.use('/', router);

@@ -1,5 +1,5 @@
 import express from 'express';
-import ApiUserController from '../controller/ApiUserController';
+import { ApiUserController } from '../controller';
 let router = express.Router();
 
 const initApiRouter = app => {
